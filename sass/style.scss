@@ -1,0 +1,21 @@
+body {
+  font-size: 16px;
+}
+
+.shop-now {
+  padding: 12px 20px;
+  background: #3954d9;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+@import "core/reset";
+@import "core/font";
+@import "blocks/menu";
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/main_front-page";
+@import "blocks/main_single"

@@ -1,0 +1,256 @@
+#front-page {
+  width: 1500px;
+  margin: auto;
+
+  .about-us {
+    display: flex;
+    flex-wrap: wrap;
+
+    .about-us-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 375px;
+      padding: 75px 70px;
+      box-sizing: border-box;
+      border-right: 1px solid rgba($color: #000000, $alpha: 0.25);
+      box-shadow: inset 0 -5px 10px rgba(12, 12, 12, 0.13);
+
+      .about-us-item-title {
+        margin-top: 30px;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.5em;
+        color: #0d2e57;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .about-us-item-text {
+        margin-top: 25px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.8em;
+        line-height: 1.5;
+        color: #8a8a8a;
+      }
+
+    }
+
+    .about-us-item:last-child {
+      border-right: none;
+    }
+
+  }
+
+  .offer-of-the-month {
+    //display: flex;
+    display: none;
+
+    .offer {
+      width: 50%;
+      padding: 100px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f2f0f0;
+
+      .offer-name {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2em;
+        text-transform: uppercase;
+      }
+
+      .offer-title {
+        margin-top: 35px;
+        font-family: "Roboto", sans-serif;
+        font-size: 2.5em;
+        text-transform: uppercase;
+      }
+
+      .offer-text {
+        margin-top: 50px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.8em;
+        line-height: 1.5;
+        color: #8a8a8a;
+        text-align: center;
+      }
+
+      .price {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        
+        .new {
+          margin-right: 25px;
+          font-family: "Montserrat", sans-serif;
+          font-size: 3em;
+          font-weight: bold;
+          color: #3954d9;
+        }
+
+        .old {
+          margin-left: 25px;
+          font-family: "Montserrat", sans-serif;
+          font-size: 2em;
+          //text-decoration: line-through;
+
+          .line-through {
+            width: 100%;
+            position: relative;
+            top: 0.5em;
+            transform: rotate(5deg);
+            border-bottom: 3px solid red;
+          }
+        }
+
+      }
+
+      .time-left {
+        width: 420px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+
+        .time-left-item {
+          width: 90px;
+          height: 110px;
+          padding: 25px 5px;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: center;
+          background-color: #ffffff;
+          border-radius: 20px;
+
+          .value {
+            font-family: "Montserrat", sans-serif;
+            font-size: 2em;
+          }
+
+          .value-name {
+            font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+          }
+
+        }
+
+      }
+
+      .shop-now {
+        margin-top: 50px;
+      }
+
+    }
+
+    .image {
+      width: 50%;
+      background: url("../img/body/offer-of-the-month/image.jpg") center center / cover;
+    }
+
+  }
+
+  .regular-offers {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .offer {
+      width: 25%;
+      height: 500px;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      color: #000000;
+      box-shadow: inset 0 0 0px rgba(12, 12, 12, 0.13);
+      transition: box-shadow 0.2s;
+
+      &:hover {
+        box-shadow: inset 0 -5px 20px rgba(12, 12, 12, 0.13);
+      }
+  
+      .offer-image {
+        width: 100%;
+        height: 85%;
+      }
+  
+      .offer-title {
+        padding: 5px;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.25);
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+      }
+  
+      .offer-price {
+        padding: 5px;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+      }
+  
+    }
+
+  }
+
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+
+    .category {
+      width: 375px;
+      height: 375px;
+      position: relative;
+
+      .category-img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .category-highlight {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        opacity: 0;
+        transition: opacity 0.5s;
+        display: flex;
+
+        .category-title {
+          font-family: "Roboto", sans-serif;
+          color: #ffffff;
+          font-size: 1em;
+          text-transform: uppercase;
+          text-align: center;
+          margin: auto;
+        }
+
+        &:hover {
+          opacity: 0.75;
+        }
+
+      }
+
+    }
+
+  }
+
+  .brands {
+    display: flex;
+    flex-wrap: wrap;
+
+    .brand {
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .brand-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+
+}

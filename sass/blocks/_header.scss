@@ -1,0 +1,41 @@
+#header {
+  display: flex;
+  flex-direction: column;
+  background: url(../img/front-page/header/bg.jpg) no-repeat center top / cover;
+  height: 100vh;
+
+  .actual-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: auto;
+    margin-left: 15%;
+
+    h1 {
+      font-family: "Poppins", sans-serif;
+      color: #ffffff;
+      font-size: 10em;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    p {
+      font-family: "Poppins", sans-serif;
+      color: #ffffff;
+      font-size: 1.5em;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 5px;
+      margin-top: 20px;
+    }
+
+    .shop-now {
+      margin-top: 40px;
+    }
+    
+  }
+
+}
