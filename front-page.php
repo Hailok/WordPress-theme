@@ -1,4 +1,13 @@
-<?php get_header('front_page'); ?>
+<?php get_header(); ?>
+
+<header id="header">
+    <section class="actual-offer">
+        <h1>Nike shoes</h1>
+        <p>Купи сейчас и получите скидку 10%</p>
+        <a href="#" class="shop-now">Покупать!</a>
+    </section>
+
+</header>
 
 <main id="front-page">
 
@@ -58,41 +67,26 @@
 </section>
 
 <section class="regular-offers">
-    
-    <a href="single.html" class="offer">
-        <!--<img src="img/front-page/body/regular-offers/offer_img.jpg" alt="" class="offer-image">-->
-        <div class="offer-image" style="background: url('<?php echo get_template_directory_uri() . '/' ?>img/front-page/body/regular-offers/offer_img1.jpg') center center / cover;"></div>
-        <h4 class="offer-title">Nike Zoom 2k</h4>
-        <p class="offer-price">40 ₴</p>
-    </a>
 
-    <a href="single.html" class="offer">
-        <!--<img src="img/front-page/body/regular-offers/offer_img.jpg" alt="" class="offer-image">-->
-        <div class="offer-image" style="background: url('<?php echo get_template_directory_uri() . '/' ?>img/front-page/body/regular-offers/offer_img2.jpg') center center / cover;"></div>
-        <h4 class="offer-title">Nike Zoom 2k</h4>
-        <p class="offer-price">40 ₴</p>
-    </a>
+    <?php
+    $posts = get_posts([
+        'numberposts' => -1,
+        'post_type' => 'product'
+    ]);
 
-    <a href="single.html" class="offer">
-        <!--<img src="img/front-page/body/regular-offers/offer_img.jpg" alt="" class="offer-image">-->
-        <div class="offer-image" style="background: url('<?php echo get_template_directory_uri() . '/' ?>img/front-page/body/regular-offers/offer_img3.jpg') center center / cover;"></div>
-        <h4 class="offer-title">Nike Zoom 2k</h4>
-        <p class="offer-price">40 ₴</p>
+    foreach($posts as $post) {
+        setup_postdata($post);
+    ?>
+    <a href="<?php the_permalink(); ?>" class="offer">
+    <div class="offer-image" style="background: url('<?php the_post_thumbnail_url() ?>') center center / cover;"></div>
+    <h4 class="offer-title"><?php the_title() ?></h4>
+    <p class="offer-price"><?php echo get_post_meta($post->ID, 'price', true) ?> ₴</p>
     </a>
+    <?php
+    }
 
-    <a href="single.html" class="offer">
-        <!--<img src="img/front-page/body/regular-offers/offer_img.jpg" alt="" class="offer-image">-->
-        <div class="offer-image" style="background: url('<?php echo get_template_directory_uri() . '/' ?>img/front-page/body/regular-offers/offer_img4.jpg') center center / cover;"></div>
-        <h4 class="offer-title">Nike Zoom 2k</h4>
-        <p class="offer-price">40 ₴</p>
-    </a>
-
-    <a href="single.html" class="offer">
-        <!--<img src="img/front-page/body/regular-offers/offer_img.jpg" alt="" class="offer-image">-->
-        <div class="offer-image" style="background: url('<?php echo get_template_directory_uri() . '/' ?>img/front-page/body/regular-offers/offer_img2.jpg') center center / cover;"></div>
-        <h4 class="offer-title">Nike Zoom 2k</h4>
-        <p class="offer-price">40 ₴</p>
-    </a>
+    wp_reset_postdata();
+    ?>
     
 </section>
 

@@ -3,13 +3,22 @@ body {
 }
 
 .shop-now {
-  padding: 12px 20px;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
   background: #3954d9;
   border-radius: 15px;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   font-size: 1em;
   text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 @import "core/reset";
