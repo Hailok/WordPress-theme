@@ -10,6 +10,11 @@ function smurov_theme_scripts() {
 	wp_enqueue_style( 'smurov_theme-style', get_template_directory_uri() . '/css/style.css' );
 }
 
+//регистрируем меню
+register_nav_menus([
+    'header' => 'Меню в шапке',
+]);
+
 //добавляем новый тип записи "Товар"
 add_action('init', 'add_post_types');
 
@@ -26,6 +31,7 @@ function add_post_types() {
 
         'public' => true,
         'supports' => array('title', 'editor', 'thumbnail'),
+        'taxonomies' => ['category'],
     ]);
 }
 
