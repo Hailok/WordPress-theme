@@ -16,6 +16,21 @@
 			}
 		}
 
+		.buy-box {
+			display: flex;
+			justify-content: space-around;
+			align-items: center; 
+			width: 100%;
+			margin-top: 50px;
+
+			.price {
+				font-family: "Montserrat", sans-serif;
+				font-size: 3em;
+				font-weight: bold;
+				color: #3954d9;
+			}
+		}
+
 		.info {
 			padding: 50px;
 			display: flex;
@@ -28,28 +43,57 @@
        			text-transform: uppercase;
 			}
 
-			.describe {
-				margin-top: 20px;
+			.headline-baseline-base {
+				font-weight: bold;
+				margin: 5px;
+			}
+
+			p, ul {
+				margin-top: 10px;
 				font-family: "Montserrat", sans-serif;
-    			line-height: 1.5;
+    			line-height: 1.2em;
     			color: #8a8a8a;
 			}
 
-			.buy-box {
-				display: flex;
-				justify-content: space-around;
-				align-items: center; 
-				width: 100%;
-				margin-top: 50px;
+			ul {
+				list-style: square;
+			}
+		}
+	}
+}
 
-				.price {
-		        	font-family: "Montserrat", sans-serif;
-			        font-size: 3em;
-			        font-weight: bold;
-			        color: #3954d9;
+@media (max-width: 1000px) {
+    #single {
+		width: 100%;
+
+		.product {
+			flex-direction: column;
+
+			.img {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.img-content {
+					width: 100%;
 				}
 			}
+		}
+	}
+}
 
+@media (max-width: 780px) {
+    #single {
+		.product {
+			.img {
+				.buy-box {
+					flex-direction: column;
+
+					.shop-now {
+						margin: 10px;
+					}
+				}
+			}
 		}
 	}
 }

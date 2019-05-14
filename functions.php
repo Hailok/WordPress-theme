@@ -15,10 +15,24 @@ register_nav_menus([
     'header' => 'Меню в шапке',
 ]);
 
-//добавляем новый тип записи "Товар"
+//добавляем новые типы записей "Товар", "О нас"
 add_action('init', 'add_post_types');
 
 function add_post_types() {
+    register_post_type('about-us', [
+        'labels' => [
+            'name' => 'О нас',
+            'add_new' => 'Добавить описание',
+            'add_new_item' => 'Добавление описание',
+            'edit_item' => 'Редактирование описание',
+            'view_item' => 'Все описания',
+            'menu_name' => 'Описания'
+        ],
+
+        'public' => true,
+        'supports' => array('title', 'editor'),
+    ]);
+
     register_post_type('product', [
         'labels' => [
             'name' => 'Товар',

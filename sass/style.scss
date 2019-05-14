@@ -2,6 +2,20 @@ body {
   font-size: 16px;
 }
 
+main {
+  min-height: 100vh;
+}
+
+.error-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .error-404 {
+    font-size: 250px;
+  }
+}
+
 .shop-now {
   outline: none;
   border: none;

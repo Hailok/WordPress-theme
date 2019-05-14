@@ -2,9 +2,9 @@
 
 <header id="header">
     <section class="actual-offer">
-        <h1>Nike shoes</h1>
-        <p>Купи сейчас и получите скидку 10%</p>
-        <a href="#" class="shop-now">Покупать!</a>
+        <h1>Shoes Time</h1>
+        <p>Оформи покупку сейчас и получи скидку 10%</p>
+        <a href="#regular-offers" class="shop-now">Покупать!</a>
     </section>
 
 </header>
@@ -12,26 +12,24 @@
 <main id="front-page">
 
 <section class="about-us">
+    <?php
+    $posts = get_posts([
+        'numberposts' => -1,
+        'post_type' => 'about-us'
+    ]);
+
+    foreach($posts as $post) {
+        setup_postdata($post);
+    ?>
     <div class="about-us-item">
-        <img src="<?php get_template_directory_uri() . '/' ?>img/front-page/body/about-us/about-us_example.png" alt="">
-        <h3 class="about-us-item-title">Free Shipping</h3>
-        <p class="about-us-item-text">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's</p>
+        <h3 class="about-us-item-title"><?php the_title(); ?></h3>
+        <p class="about-us-item-text"><?php echo get_the_content(); ?></p>
     </div>
-    <div class="about-us-item">
-        <img src="<?php get_template_directory_uri() . '/' ?>img/front-page//body/about-us/about-us_example.png" alt="">
-        <h3 class="about-us-item-title">Free Shipping</h3>
-        <p class="about-us-item-text">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's</p>
-    </div>
-    <div class="about-us-item">
-        <img src="<?php get_template_directory_uri() . '/' ?>img/front-page/body/about-us/about-us_example.png" alt="">
-        <h3 class="about-us-item-title">Free Shipping</h3>
-        <p class="about-us-item-text">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's</p>
-    </div>
-    <div class="about-us-item">
-        <img src="<?php get_template_directory_uri() . '/' ?>img/front-page/body/about-us/about-us_example.png" alt="">
-        <h3 class="about-us-item-title">Free Shipping</h3>
-        <p class="about-us-item-text">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's</p>
-    </div>
+    <?php
+    }
+
+    wp_reset_postdata();
+    ?>
 </section>
 
 <section class="offer-of-the-month">
@@ -66,7 +64,7 @@
     <div class="image"></div>
 </section>
 
-<section class="regular-offers">
+<section id="regular-offers" class="regular-offers">
 
     <?php
     $posts = get_posts([

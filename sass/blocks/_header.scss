@@ -39,3 +39,17 @@
   }
 
 }
+
+@media (max-width: 1200px) {
+  #header {
+    .actual-offer {
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  #header {
+    display: none;
+  }
+}

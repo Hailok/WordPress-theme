@@ -16,25 +16,45 @@ jQuery(document).ready(function($) {
 
     //оформление покупки
     $(".menu .shop-button .shop-button-confirm .shop-button-confirm-item").click(function(event) {
-        cleanCookie(cookieName);
-        showCookieOfBasket();
+        var currentCookie = readCookie(cookieName);
+		var shoes = currentCookie == undefined ? [] : JSON.parse(currentCookie);
+
+        if(
+            $(".menu .shop-button .shop-button-confirm input.your-name").val() != "" &&
+            $(".menu .shop-button .shop-button-confirm input.telephone-number").val() != "" &&
+            $(".menu .shop-button .shop-button-confirm input.address").val() != ""
+            ) {
+            cleanCookie(cookieName);
+            showCookieOfBasket();
+        }
+
+
+        $(".menu .shop-button .shop-button-confirm input.your-name").val();
+        $(".menu .shop-button .shop-button-confirm input.telephone-number").val();
+        $(".menu .shop-button .shop-button-confirm input.address").val();
     });
 
 	//добавление и отображение cookie в корзине
-	$("#single .product .info .buy-box .shop-now").click(function(event) {
+	$("#single .product .buy-box .shop-now").click(function(event) {
 		var currentCookie = readCookie(cookieName);
 		var shoes = currentCookie == undefined ? [] : JSON.parse(currentCookie);
-		shoes.push("запись1");
+		shoes.push([
+            $(".product .info .title").text(),
+            parseFloat($(".product .price").text()),
+        ]);
 		var shoesJSON = JSON.stringify(shoes);
 		createCookie(cookieName, shoesJSON, 30);
-
+        $(".menu .shop-button .shop-button-confirm textarea.order-list").val("");
 		$(".menu .shop-button .shop-bukket .shop-bukket-items").empty();
 		for(var i = 0; i < shoes.length; i++) {
 			$(".menu .shop-button .shop-bukket .shop-bukket-items").append(
                 '<div class="shop-bukket-item">'+
-                    '<div class="item-name">Кроссовки1</div>'+
-                    '<div class="item-price">54 грн</div>'+
+                    '<div class="item-name">' + shoes[i][0] + '</div>'+
+                    '<div class="item-price">' + shoes[i][1] + ' ₴</div>'+
                 '</div>'
+            );
+            $(".menu .shop-button .shop-button-confirm textarea.order-list").val(
+                $(".menu .shop-button .shop-button-confirm textarea.order-list").val() + "\n" + (i + 1) + ") Название: " + shoes[i][0] + "\nЦена: " + shoes[i][1] + " грн"
             );
 		}
 	});
@@ -51,15 +71,19 @@ function showCookieOfBasket() {
     } else {
         var shoes = JSON.parse(currentCookie);
 
+        $(".menu .shop-button .shop-button-confirm textarea.order-list").val("");
         $(".menu .shop-button .shop-bukket .shop-bukket-items").empty();
         for(var i = 0; i < shoes.length; i++) {
             $(".menu .shop-button .shop-bukket .shop-bukket-items").append(
                 '<div class="shop-bukket-item">'+
-                    '<div class="item-name">Кроссовки1</div>'+
-                    '<div class="item-price">54 грн</div>'+
+                    '<div class="item-name">' + shoes[i][0] + '</div>'+
+                    '<div class="item-price">' + shoes[i][1] + ' ₴</div>'+
                 '</div>'
-        );
-    }
+            );
+            $(".menu .shop-button .shop-button-confirm textarea.order-list").val(
+                $(".menu .shop-button .shop-button-confirm textarea.order-list").val() + "\n" + (i + 1) + ") Название: " + shoes[i][0] + "\nЦена: " + shoes[i][1] + " грн"
+            );
+        }
     }
 }
 

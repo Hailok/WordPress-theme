@@ -10,7 +10,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 375px;
+      width: 25%;
       padding: 75px 70px;
       box-sizing: border-box;
       border-right: 1px solid rgba($color: #000000, $alpha: 0.25);
@@ -23,6 +23,7 @@
         color: #0d2e57;
         font-weight: bold;
         text-transform: uppercase;
+        text-align: center;
       }
 
       .about-us-item-text {
@@ -31,6 +32,7 @@
         font-size: 0.8em;
         line-height: 1.5;
         color: #8a8a8a;
+        text-align: center;
       }
 
     }
@@ -194,6 +196,7 @@
   .categories {
     display: flex;
     flex-wrap: wrap;
+    display: none;
 
     .category {
       width: 375px;
@@ -237,6 +240,7 @@
   .brands {
     display: flex;
     flex-wrap: wrap;
+    display: none;
 
     .brand {
       width: 250px;
@@ -253,4 +257,40 @@
 
   }
 
+}
+
+@media (max-width: 1500px) {
+  #front-page {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  #front-page {
+    .about-us{
+      .about-us-item {
+        width: 50%;
+      }
+    }
+
+    .regular-offers {
+      .offer {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  #front-page {
+    .about-us{
+      display: none;
+    }
+
+    .regular-offers {
+      .offer {
+        width: 100%;
+      }
+    }
+  }
 }

@@ -38,3 +38,29 @@
         }
     }
 }
+
+@media (max-width: 1500px) {
+    #category {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    #category {
+      .regular-offers {
+        .offer {
+          width: 50%;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 780px) {
+    #category {
+      .regular-offers {
+        .offer {
+          width: 100%;
+        }
+      }
+    }
+  }
