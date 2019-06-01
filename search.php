@@ -1,7 +1,6 @@
 <?php get_header() ?>
 
-<?php the_post() ?>
-<main id="category">
+<main id="archive">
     <section class="regular-offers">
 
         <?php
@@ -11,9 +10,8 @@
         //    'category' => get_cat_ID(single_cat_title('', 0)),
         //    'post_type' => 'product'
         //]);
-
         $posts = new WP_Query([
-            'posts_per_page' => 5,
+            'posts_per_page' => -1,
             'post_type' => 'product',
             's' => $s,
         ]);

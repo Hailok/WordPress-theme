@@ -23,20 +23,12 @@
     <?php 
     wp_nav_menu([
         'menu'            => 'Главное меню',
+        'theme_location'  => 'header',
         'container'       => '',          
         'container_class' => '',              
         'container_id'    => '',             
-        'menu_class'      => 'menu-list',          
-        'menu_id'         => '',              
-        'echo'            => true,            
-        'fallback_cb'     => 'wp_page_menu',  
-        'before'          => '',            
-        'after'           => '',         
-        'link_before'     => '',
-        'link_after'      => '',
-        'depth'           => 0,
-        'walker'          => '',
-        'theme_location'  => ''
+        'menu_class'      => 'menu-list',              
+        'echo'            => true,
     ]);
     ?>
 

@@ -7,12 +7,15 @@ add_theme_support( 'post-thumbnails', ['product']);
 add_action( 'wp_enqueue_scripts', 'smurov_theme_scripts' );
 
 function smurov_theme_scripts() {
-	wp_enqueue_style( 'smurov_theme-style', get_template_directory_uri() . '/css/style.css' );
+    wp_enqueue_style( 'smurov_theme-style', get_template_directory_uri() . '/css/style.css' );
+    wp_enqueue_script('cookie-functions', get_template_directory_uri() . '/js/cookie.js' );
 }
 
 //регистрируем меню
 register_nav_menus([
     'header' => 'Меню в шапке',
+    'filters' => 'Фильтры',
+    'designers' => 'Дизайнеры'
 ]);
 
 //добавляем новые типы записей "Товар", "О нас"

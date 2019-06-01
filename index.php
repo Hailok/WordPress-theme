@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php echo "хуита" ?>
+<?php echo '404' ?>
 
 <?php
 get_footer();

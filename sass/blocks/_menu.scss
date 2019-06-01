@@ -2,7 +2,7 @@
 height: 50px;
 display: flex;
 background-color: rgba($color: #212121, $alpha: 0.9);
-border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.25);
+//border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.25);
 
     .logo {
         display: flex;
@@ -33,6 +33,7 @@ border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.25);
         flex-wrap: wrap;
         flex-grow: 1;
         align-items: center;
+        justify-content: center;
         flex-grow: 1;
         width: 500px;
         padding: 0 30px 0 30px;
@@ -115,14 +116,16 @@ border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.25);
                     .shop-bukket-item {
                         display: flex;
                         justify-content: space-between;
-                        margin-bottom: 10px;
+                        margin-top: 10px;
     
                         font-family: "Roboto", sans-serif;
                         font-size: 1em;
                         opacity: 0.7;
-                        transition: opacity 0.2s;
+                        transition: all 0.2s;
                 
                         &:hover {
+                            cursor: pointer; 
+                            color: rgba($color: #D24646, $alpha: 0.9);
                             opacity: 1;
                         }
     

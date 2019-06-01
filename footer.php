@@ -1,5 +1,5 @@
 
-<footer id="footer">
+	<footer id="footer">
 		<p class="footer-copy">Интернет магазин "Кроссовки™" 2019 | Все права защищены</p>
 	</footer>
 

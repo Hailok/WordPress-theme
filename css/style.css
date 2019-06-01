@@ -84,8 +84,7 @@ table {
 .menu {
   height: 50px;
   display: flex;
-  background-color: rgba(33, 33, 33, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+  background-color: rgba(33, 33, 33, 0.9); }
   .menu .logo {
     display: flex;
     justify-content: center;
@@ -109,6 +108,7 @@ table {
     flex-wrap: wrap;
     flex-grow: 1;
     align-items: center;
+    justify-content: center;
     flex-grow: 1;
     width: 500px;
     padding: 0 30px 0 30px;
@@ -169,12 +169,14 @@ table {
           .menu .func-button-wrap .shop-button .shop-bukket .shop-bukket-items .shop-bukket-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-top: 10px;
             font-family: "Roboto", sans-serif;
             font-size: 1em;
             opacity: 0.7;
-            transition: opacity 0.2s; }
+            transition: all 0.2s; }
             .menu .func-button-wrap .shop-button .shop-bukket .shop-bukket-items .shop-bukket-item:hover {
+              cursor: pointer;
+              color: rgba(210, 70, 70, 0.9);
               opacity: 1; }
             .menu .func-button-wrap .shop-button .shop-bukket .shop-bukket-items .shop-bukket-item .item-name {
               width: 70%; }
@@ -559,32 +561,68 @@ table {
     #single .product .img .buy-box .shop-now {
       margin: 10px; } }
 
-#category .regular-offers {
+#archive {
   display: flex;
-  flex-wrap: wrap; }
-  #category .regular-offers .offer {
-    width: 25%;
-    height: 500px;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    color: #000000;
-    box-shadow: inset 0 0 0px rgba(12, 12, 12, 0.13);
-    transition: box-shadow 0.2s; }
-    #category .regular-offers .offer:hover {
-      box-shadow: inset 0 -5px 20px rgba(12, 12, 12, 0.13); }
-    #category .regular-offers .offer .offer-image {
-      width: 100%;
-      height: 85%; }
-    #category .regular-offers .offer .offer-title {
-      padding: 5px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  margin-top: 10px; }
+  #archive .filter-panel {
+    width: 10%;
+    background-color: rgba(33, 33, 33, 0.9);
+    padding: 15px; }
+    #archive .filter-panel .title {
       font-family: "Roboto", sans-serif;
-      text-align: center;
-      text-transform: uppercase; }
-    #category .regular-offers .offer .offer-price {
-      padding: 5px;
+      color: #ffffff;
+      font-size: 1.2em; }
+    #archive .filter-panel .orderby-item {
+      color: #ffffff;
+      height: 25px;
+      width: 80%;
+      border-radius: 5px;
+      margin: 10px;
+      background: rgba(33, 33, 33, 0.9); }
+    #archive .filter-panel .menu-item {
+      margin: 10px; }
+      #archive .filter-panel .menu-item a {
+        font-family: "Roboto", sans-serif;
+        color: #ffffff;
+        font-size: 1em;
+        opacity: 0.7;
+        transition: opacity 0.2s; }
+        #archive .filter-panel .menu-item a:hover {
+          opacity: 1; }
+        #archive .filter-panel .menu-item a.selected {
+          color: rgba(210, 70, 70, 0.9); }
+  #archive .regular-offers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    #archive .regular-offers .offer {
+      width: 25%;
+      height: 400px;
+      padding: 10px;
+      box-sizing: border-box;
+      color: #000000;
+      box-shadow: inset 0 0 0px rgba(12, 12, 12, 0.13);
+      transition: box-shadow 0.2s; }
+      #archive .regular-offers .offer:hover {
+        box-shadow: inset 0 -5px 20px rgba(12, 12, 12, 0.13); }
+      #archive .regular-offers .offer .offer-image {
+        width: 100%;
+        height: 85%; }
+      #archive .regular-offers .offer .offer-title {
+        padding: 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        text-transform: uppercase; }
+      #archive .regular-offers .offer .offer-price {
+        padding: 5px;
+        font-family: "Roboto", sans-serif;
+        text-align: center; }
+    #archive .regular-offers .search-error {
+      margin: 20px auto;
       font-family: "Roboto", sans-serif;
-      text-align: center; }
+      font-size: 1.2em;
+      opacity: 0.7; }
 
 @media (max-width: 1500px) {
   #category {
