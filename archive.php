@@ -2,41 +2,43 @@
 
 <main id="archive">
     <aside class="filter-panel">
-        <div class="category">
-            <p class="title">Категории</p>
-            <?php 
-            wp_nav_menu([
-                'menu'            => 'Меню фильтров',
-                'theme_location'  => 'filters',
-                'container'       => '',          
-                'container_class' => '',              
-                'container_id'    => '',             
-                'menu_class'      => 'menu-categories',            
-                'echo'            => true,
-            ]);
-            ?>
-        </div>
-        <div class="designers">
-            <p class="title">Дизайнеры</p>
-            <?php 
-            wp_nav_menu([
-                'menu'            => 'Меню фильтров',
-                'theme_location'  => 'designers',
-                'container'       => '',          
-                'container_class' => '',              
-                'container_id'    => '',             
-                'menu_class'      => 'menu-designers',            
-                'echo'            => true,
-            ]);
-            ?>
-        </div>
-        <div class="orderby">
-            <p class="title">Сортировка</p>
-            <select class="orderby-item">
-                <option>сначала новые</option>
-                <option>от дешевых к дорогим</option>
-                <option>от дороших к дешевым</option>
-            </select>
+        <div class="filter-wrap">
+            <div class="filter-item category">
+                <p class="title">Категории</p>
+                <?php 
+                wp_nav_menu([
+                    'menu'            => 'Меню фильтров',
+                    'theme_location'  => 'filters',
+                    'container'       => '',          
+                    'container_class' => '',              
+                    'container_id'    => '',             
+                    'menu_class'      => 'menu-categories',            
+                    'echo'            => true,
+                ]);
+                ?>
+            </div>
+            <div class="filter-item designers">
+                <p class="title">Дизайнеры</p>
+                <?php 
+                wp_nav_menu([
+                    'menu'            => 'Меню фильтров',
+                    'theme_location'  => 'designers',
+                    'container'       => '',          
+                    'container_class' => '',              
+                    'container_id'    => '',             
+                    'menu_class'      => 'menu-designers',            
+                    'echo'            => true,
+                ]);
+                ?>
+            </div>
+            <div class="filter-item orderby">
+                <p class="title">Сортировка</p>
+                <select class="orderby-item">
+                    <option>сначала новые</option>
+                    <option>от дешевых к дорогим</option>
+                    <option>от дороших к дешевым</option>
+                </select>
+            </div>
         </div>
 
         <script src="<?php echo get_template_directory_uri() . '/' ?>js/setting-filter-menu.js"></script>

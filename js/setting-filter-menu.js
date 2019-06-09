@@ -31,7 +31,6 @@ if (currentURL.indexOf("from-new") != -1) {
 }
 
 orderbyElem.onchange = function() {
-    console.log(orderbyElem.selectedIndex);
     var orderby = orderbyElem.selectedIndex;
 
     switch (orderby) {

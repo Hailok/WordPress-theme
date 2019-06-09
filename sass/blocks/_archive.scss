@@ -73,6 +73,7 @@
                 font-family: "Roboto", sans-serif;
                 text-align: center;
                 text-transform: uppercase;
+                font-size: 0.9em;
             }
         
             .offer-price {
@@ -92,13 +93,57 @@
 }
 
 @media (max-width: 1500px) {
-    #category {
+    #archive {
       width: 100%;
+      margin: 0;
+      flex-direction: column;
+
+      .filter-panel {
+        display: none;
+        width: 100%;
+
+        .filter-wrap {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          .filter-item {
+            width: 50%;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            
+          }
+
+          .orderby {
+            .orderby-item {
+              width: 50%;
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      .regular-offers {
+        .offer {
+          height: 300px;
+        }
+      }
     }
   }
   
-  @media (max-width: 1200px) {
-    #category {
+  @media (max-width: 1000px) {
+    #archive {
+      .regular-offers {
+        .offer {
+          width: 33.33%;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 780px) {
+    #archive {
       .regular-offers {
         .offer {
           width: 50%;
@@ -106,9 +151,9 @@
       }
     }
   }
-  
-  @media (max-width: 780px) {
-    #category {
+
+  @media (max-width: 400px) {
+    #archive {
       .regular-offers {
         .offer {
           width: 100%;

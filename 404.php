@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <main class="error-block">
     <div class="error-404">404</div>

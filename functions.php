@@ -24,12 +24,12 @@ add_action('init', 'add_post_types');
 function add_post_types() {
     register_post_type('about-us', [
         'labels' => [
-            'name' => 'О нас',
-            'add_new' => 'Добавить описание',
-            'add_new_item' => 'Добавление описание',
-            'edit_item' => 'Редактирование описание',
-            'view_item' => 'Все описания',
-            'menu_name' => 'Описания'
+            'name' => 'Про нас',
+            'add_new' => 'Додати опис',
+            'add_new_item' => 'Додавання опису',
+            'edit_item' => 'Редагування опису',
+            'view_item' => 'Всі описи',
+            'menu_name' => 'Опис'
         ],
 
         'public' => true,
@@ -39,11 +39,11 @@ function add_post_types() {
     register_post_type('product', [
         'labels' => [
             'name' => 'Товар',
-            'add_new' => 'Добавить товар',
-            'add_new_item' => 'Добавление товара',
-            'edit_item' => 'Редактирование товара',
-            'view_item' => 'Все товары',
-            'menu_name' => 'Товары'
+            'add_new' => 'Додати товар',
+            'add_new_item' => 'Додавання товару',
+            'edit_item' => 'Редагування товару',
+            'view_item' => 'Усі товари',
+            'menu_name' => 'Товари'
         ],
 
         'public' => true,
@@ -57,7 +57,7 @@ add_action('add_meta_boxes', 'add_extra_fields');
 add_action('save_post', 'save_extra_field');
 
 function add_extra_fields() { //добавляем поле в админ-панель
-    add_meta_box('price', 'Цена', 'price_field', 'product');
+    add_meta_box('price', 'Ціна', 'price_field', 'product');
 }
 
 function price_field($post) { //описываем внешний вид поля в админ-панеле

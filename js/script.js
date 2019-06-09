@@ -3,6 +3,22 @@ var cookieName = "shoes";
 jQuery(document).ready(function($) {
     showCookieOfBasket();
 
+    //переключение между меню и лого
+    $(".open-menu-button .open-menu-button-item").click(function(event) {
+        if (getComputedStyle(document.querySelector(".menu .logo-menu-wrap .logo")).display == "flex") {
+            $(".menu .logo-menu-wrap .logo").css("display", "none");
+            $(".menu .logo-menu-wrap .menu-list").css("display", "flex");
+        } else {
+            $(".menu .logo-menu-wrap .menu-list").css("display", "none");
+            $(".menu .logo-menu-wrap .logo").css("display", "flex");
+        }
+    });
+
+    //появление фильтра
+    $(".menu .filter-button .filter-button-item").click(function(event) {
+		$("#archive .filter-panel").fadeToggle(200);
+    });
+
     //появление строки поиска
 	$(".menu .search .search-button-disabled").click(function(event) {
 		$(".menu .search .search-button-disabled").css("display", "none");
@@ -43,13 +59,14 @@ jQuery(document).ready(function($) {
             $(".product .info .title").text(),
             parseFloat($(".product .price").text()),
         ]);
+        $(".menu .shop-button .shop-button-item .counterItems").text(shoes.length);
 		var shoesJSON = JSON.stringify(shoes);
 		createCookie(cookieName, shoesJSON, 30);
         $(".menu .shop-button .shop-button-confirm textarea.order-list").val("");
 		$(".menu .shop-button .shop-bukket .shop-bukket-items").empty();
 		for(var i = 0; i < shoes.length; i++) {
 			$(".menu .shop-button .shop-bukket .shop-bukket-items").append(
-                '<div class="shop-bukket-item ' + i + '">'+
+                '<div class="shop-bukket-item" data-index="' + i + '">'+
                     '<div class="item-name">' + shoes[i][0] + '</div>'+
                     '<div class="item-price">' + shoes[i][1] + ' ₴</div>'+
                 '</div>'
@@ -65,15 +82,16 @@ jQuery(document).ready(function($) {
 //отобразить cookie в корзине
 function showCookieOfBasket() {
     var currentCookie = readCookie(cookieName);
+    var shoes = JSON.parse(currentCookie);
 
-    if (currentCookie == undefined || currentCookie.length <= 0) {
-        console.log("00000");
+    if (shoes == undefined || shoes.length <= 0) {
+        $(".menu .shop-button .shop-button-item .counterItems").text("0");
         $(".menu .shop-button .shop-bukket .shop-bukket-items").empty().append(
-            '<p class="isEmpry">Корзина пустая</p>'
+            '<p class="isEmpty">Корзина пустая</p>'
         )
     } else {
-        var shoes = JSON.parse(currentCookie);
-
+        $(".menu .shop-button .shop-button-item .counterItems").text(shoes.length);
+        
         $(".menu .shop-button .shop-button-confirm textarea.order-list").val("");
         $(".menu .shop-button .shop-bukket .shop-bukket-items").empty();
         for(var i = 0; i < shoes.length; i++) {
@@ -105,4 +123,9 @@ function setRemoveFunc() {
             showCookieOfBasket();
         }
     }
+}
+
+//отображение количества товаров к розине
+function setCountThings() {
+
 }

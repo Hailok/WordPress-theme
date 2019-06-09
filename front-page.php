@@ -2,9 +2,9 @@
 
 <header id="header">
     <section class="actual-offer">
-        <h1>Shoes Time</h1>
-        <p>Оформи покупку сейчас и получи скидку 10%</p>
-        <a href="#regular-offers" class="shop-now">Покупать!</a>
+        <h1><?php bloginfo('name') ?></h1>
+        <p>Бажаємо приємних покупок</p>
+        <a href="#regular-offers" class="shop-now">Купувати!</a>
     </section>
 
 </header>
